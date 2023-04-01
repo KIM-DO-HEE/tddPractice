@@ -2,20 +2,14 @@ package com.example.tdd;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 public class ProductServiceTest {
 
-    private ProductSerivce productSerivce;
-    private ProductPort productPort;
-    private ProductRepository productRepository;
 
-    @BeforeEach
-    void setUp(){
-        productRepository = new ProductRepository();
-        productPort = new ProductAdapter(productRepository);
-        productSerivce = new ProductSerivce(productPort);
-    }
+    @Autowired
+    private ProductSerivce productSerivce;
 
     @Test
     void 상품등록(){
